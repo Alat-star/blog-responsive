@@ -1,0 +1,130 @@
+:root {
+    --yellow: #ffc600;
+  }
+
+  html {
+    color: #444;
+    font-family: Cambria, Cochin, Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+  }
+
+  p {
+    line-height: 1.8;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  a {
+    color: black;
+    text-decoration: underline wavy var(--yellow);
+  }
+
+  h1,
+  h2 {
+    font-size: 80px;
+    font-style: italic;
+    font-weight: 100;
+    margin: 0;
+  }
+
+  .post {
+    max-width: 1000px;
+    margin: 200px auto;
+    text-align: justify;
+    display: grid;
+    grid-gap: 10px 50px;
+    grid-template-columns: 3fr 12fr 5fr;
+
+  }
+
+  .post>* {
+    grid-column: 2 / -2;
+  } 
+
+  blockquote {
+    font-size: 10vmin;
+    grid-column: 1 / -1;
+    font-style: italic;
+  }
+
+  .tip {
+    background: rgba(204,204,204,0.3);
+    box-shadow: 0 8px 8px rgba(0,0,0,0.8);
+    border-radius: 5px;
+    padding: 2rem;
+    align-self: flex-start;
+    text-align: justify;
+  }
+
+  .tip-right {
+    grid-column: 3 / span 1;
+    border-left: 4px solid rgba(255,255,0,0.5);
+    /* text-align: left; */
+    
+
+  }
+
+  .tip-left {
+    grid-column: 1 / span 1;
+    border-right: 4px solid rgba(255,255,0,0.5);
+    /* text-align: right; */
+  }
+
+  .post>figure {
+    grid-column: 1 / -1;
+    justify-content: stretch;
+    place-items: stretch;
+  }
+
+  .post>figure>figcaption {
+    font-size: 1.3vmin;
+  }
+
+  @media screen and (max-width: 1000px){
+    .post{
+      margin: 0 auto;
+      max-width: 700px;
+      grid-template-columns:auto auto;
+      justify-content: center;
+      place-items: center;
+      
+    }
+
+    .post>figure {
+      grid-column: 1 /-1;
+      justify-content: start;
+      width: 100%;
+    }
+
+    .post>figure>figcaption{
+      text-align: center;
+    }
+
+    .post>*{
+      grid-column: 1/ span 1;
+      padding: 0 1rem;
+    }
+    .tip {
+      grid-column: 2 / span 1;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .post{
+      grid-template-columns: auto;
+      margin: 0 auto;
+    }
+
+    .post>* {
+      grid-column: 1/-1;
+      justify-content: center;
+      padding: 0 1rem;
+    }
+
+    .post>figure>figcaption{
+      font-size: .5rem;
+    }
+
+  }
